@@ -2,20 +2,20 @@
 
 class {
   onCreate(){
-    this.state = { rightTime: '', timer: null }
+    this.state = { rightTime: (new Date).toLocaleTimeString(), timer: null }
     this.setTime = this.setTime.bind(this)
   }
   onMount() {
     this.setTime()
   }
   onDestroy() {
-    clearInterval(this.timer)
+    clearTimeout(this.state.timer)
   }
   setTime() {
-    this.timer = window.setInterval(() => {
+    this.state.timer = setTimeout(() => {
       const nowDate = new Date()
-      const timerString = nowDate.toLocaleTimeString()
-      this.state.rightTime = timerString
+      this.state.rightTime = nowDate.toLocaleTimeString()
+      this.setTime()
     }, 1000)
   }
 }
@@ -25,5 +25,6 @@ style {
     color: #75c5e9;
     font-size: 20px;
     margin-bottom: 20px;
+    min-height: 26px;
   }
 }

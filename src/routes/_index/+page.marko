@@ -22,12 +22,7 @@
         </div>
       </header>
       <ul.list>
-        $ const list = [
-          {key: '1', title: 'Affordable Protection Plans', subTitle: 'Save up to 505% when you buy online trom Alstate', img: './logo.svg'},
-          {key: '2', title: '100% of covered repair costs', subTitle: 'Covers everything from your steering and trmnamission, down to hefancy toch insise your touchseroan. All you pay in a S50 deduetible.', img: './logo.svg'},
-          {key: '3', title: 'Repair Anywhere', subTitle: "You choose your mecharie, and we pay theen diracsy for rupairs, so you aren't stutk chasing dowim reimburséments.", img: './logo.svg'}
-        ]
-        <for|item| of=list>
+        <for|item| of=state.list>
           <li.list-item key=item.key>
             <img alt="" src='./logo.svg' style="width:32px"/>
             <div style="padding-left: 18px">
@@ -82,18 +77,18 @@
   </main>
 </div>
 
-// class {
-//   onCreate() {
-//     this.state = {
-//       list: [
-//         {key: '1', title: 'Affordable Protection Plans', subTitle: 'Save up to 505% when you buy online trom Alstate', img: './logo.svg'}
-//         {key: '2', title: '100% of covered repair costs', subTitle: 'Covers everything from your steering and trmnamission, down to hefancy toch insise your touchseroan. All you pay in a S50 deduetible.', img: './logo.svg'},
-//         {key: '3', title: 'Repair Anywhere', subTitle: "You choose your mecharie, and we pay theen diracsy for rupairs, so you aren't stutk chasing dowim reimburséments.", img: './logo.svg'}
-//       ],
-//       text: '123'
-//     }
-//   }
-// }
+class {
+  onCreate() {
+    this.state = {
+      list: [
+        {key: '1', title: 'Affordable Protection Plans', subTitle: 'Save up to 505% when you buy online trom Alstate', img: './logo.svg'},
+        {key: '2', title: '100% of covered repair costs', subTitle: 'Covers everything from your steering and trmnamission, down to hefancy toch insise your touchseroan. All you pay in a S50 deduetible.', img: './logo.svg'},
+        {key: '3', title: 'Repair Anywhere', subTitle: "You choose your mecharie, and we pay theen diracsy for rupairs, so you aren't stutk chasing dowim reimburséments.", img: './logo.svg'}
+      ],
+      text: '123'
+    }
+  }
+}
 
 style {
   .container {
