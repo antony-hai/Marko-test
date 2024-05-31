@@ -1,29 +1,195 @@
 <div.container>
-  <header>
-    <img.logo src="./logo.svg" alt="Marko"/>
-  </header>
-  <main>
-    <p>Edit <code>./src/routes/_index/+page.marko</code> and save to reload.</p>
-    <a href="https://markojs.com/docs/getting-started">
-      Learn Marko
-    </a>
+  <nav.head>
+    <div style="padding-top: 20px">
+      <img.logo src="./logo.svg" alt="Marko"/>
+    </div>
+    <div.contant>
+      <timer-count/>
+      <div style="font-size: 20px"> Allstate extended Vehicle Care</div>
+      <div.subTitle> Protection that <span.w>
+        extends beyond your warranty
+      </span></div>
+    </div>
+  </nav>
+  <main.main>
+    <section.left>
+      <header>
+        <div style="color: #75c5e9; font-size: 18px">
+          Allstate extended Vehicle Care
+        </div>
+        <div style="color: white; font-size: 12px; margin-top:8px">
+          For as tittle as $19/mo, we'll pay for repairs after your manufacturer's
+        </div>
+      </header>
+      <ul.list>
+        $ const list = [
+          {key: '1', title: 'Affordable Protection Plans', subTitle: 'Save up to 505% when you buy online trom Alstate', img: './logo.svg'},
+          {key: '2', title: '100% of covered repair costs', subTitle: 'Covers everything from your steering and trmnamission, down to hefancy toch insise your touchseroan. All you pay in a S50 deduetible.', img: './logo.svg'},
+          {key: '3', title: 'Repair Anywhere', subTitle: "You choose your mecharie, and we pay theen diracsy for rupairs, so you aren't stutk chasing dowim reimburséments.", img: './logo.svg'}
+        ]
+        <for|item| of=list>
+          <li.list-item key=item.key>
+            <img alt="" src='./logo.svg' style="width:32px"/>
+            <div style="padding-left: 18px">
+              <div style="color: black; font-size:14px; font-weight: 600">${item.title}</div>
+              <div style="color: #3c3c3c; font-size: 12px; margin-top:8px;">${item.subTitle}</div>
+            </div>
+          </li>
+        </for>
+      </ul>
+    </section>
+    <section.right>
+      <h3>Get a Free Quote</h3>
+      <form.form>
+        <div.formline>
+          <section style="width: 47%">
+            <div.label>
+              First Name
+            </div>
+            <div>
+              <input.input />
+            </div>
+          </section>
+          <section style="width: 47%">
+            <div.label>
+              Last Name
+            </div>
+            <div>
+              <input.input />
+            </div>
+          </section>
+          
+        </div>
+        <div.formline>
+          <section style="width: 100%"><div.label>
+            Email Address
+          </div>
+          <div><input.input /></div></section>
+        </div>
+
+        <h3>Please Check All Boxes To Qualify</h3>
+        <div style="font-size:12px; padding: 8px 0;"><input type="checkbox" style="margin-right: 4px; vertical-align: middle"/>My vehide's model year is 2017 or newer</div>
+        <div style="font-size:12px; padding: 8px 0;"><input type="checkbox" style="margin-right: 4px; vertical-align: middle"/>My vehidle has less than 80,000 mles</div>
+        <div style="font-size:12px; padding: 8px 0;"><input type="checkbox" style="margin-right: 4px; vertical-align: middle"/>I do not live in eithar Calformia or Massachuseds</div>
+
+        <div style="transform: scale(0.8); font-size:12px; color: white; margin-top: 12px; margin-left: -10%">By ciaking Subnt you agen to sand your intoemation t Aha</div>
+
+        <div style="text-align: center; padding-top: 24px">
+          <button.btn>Learn More</button>
+        </div>
+      </form>
+    </section>
   </main>
 </div>
-<mouse-mask/>
+
+// class {
+//   onCreate() {
+//     this.state = {
+//       list: [
+//         {key: '1', title: 'Affordable Protection Plans', subTitle: 'Save up to 505% when you buy online trom Alstate', img: './logo.svg'}
+//         {key: '2', title: '100% of covered repair costs', subTitle: 'Covers everything from your steering and trmnamission, down to hefancy toch insise your touchseroan. All you pay in a S50 deduetible.', img: './logo.svg'},
+//         {key: '3', title: 'Repair Anywhere', subTitle: "You choose your mecharie, and we pay theen diracsy for rupairs, so you aren't stutk chasing dowim reimburséments.", img: './logo.svg'}
+//       ],
+//       text: '123'
+//     }
+//   }
+// }
 
 style {
   .container {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(1em, 2vw, 2em); 
-    padding: 1em;
+    margin: 20px auto;
+    max-width: 900px;
     box-sizing: border-box;
-    height:100%;
-    width:100%;
+  }
+  nav.head {
+    display: flex;
+    background-color: #0d1940;
+    padding: 30px;
   }
   img.logo {
-    width:12em;
+    width: 50px;
+    vertical-align: top;
   }
+  div.contant {
+    flex: 1;
+    margin-left: 32px;
+  }
+  span.w {
+    color: #75c5e9;
+  }
+  div.subTitle {
+    font-size: 36px;
+    margin-top: 12px;
+  }
+  main.main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+  }
+  section.right {
+    background-color: #0d1940;
+    padding: 20px 40px;
+
+  }
+  .left, .right {
+    width: 48%;
+    box-sizing: border-box;
+  }
+   @media screen and (max-width: 720px) {
+    .right, .left {
+      width: 100%;
+    }
+  }
+
+  .left header {
+    padding: 16px 32px;
+    background-color: #0133a0;
+  }
+  ul.list {
+    margin: 12px 0;
+    padding: 0;
+  }
+  li.list-item {
+    display: flex;
+    padding:20px 4px;
+  }
+  .form {
+    margin: 20px 0;
+    box-sizing: border-box;
+  }
+  .form .formline {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+  .form .label {
+    font-size: 12px;
+  }
+  .form .input {
+    outline: none;
+    list-style: none;
+    background-color: white;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 100%;
+    border: none;
+  }
+  .form .btn {
+    outline: none;
+    display: inline-block;
+    user-select: none;
+    text-align: center;
+    width: 160px;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    line-height: 2;
+    background-color: #ed7766;
+    color: #212143;
+    font-weight: 600;
+  }
+
 }

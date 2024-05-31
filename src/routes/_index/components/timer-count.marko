@@ -1,0 +1,29 @@
+<div.count>${state.rightTime}</div>
+
+class {
+  onCreate(){
+    this.state = { rightTime: '', timer: null }
+    this.setTime = this.setTime.bind(this)
+  }
+  onMount() {
+    this.setTime()
+  }
+  onDestroy() {
+    clearInterval(this.timer)
+  }
+  setTime() {
+    this.timer = window.setInterval(() => {
+      const nowDate = new Date()
+      const timerString = nowDate.toLocaleTimeString()
+      this.state.rightTime = timerString
+    }, 1000)
+  }
+}
+
+style {
+  div.count {
+    color: #75c5e9;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
